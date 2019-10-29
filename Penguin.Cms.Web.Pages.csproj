@@ -7,9 +7,9 @@
     <Description>Not Available</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="1.0.0-T9LXGUJ" />
-    <PackageReference Include="Penguin.Web.Abstractions" Version="1.0.0-T9LXGUJ" />
-    <PackageReference Include="Penguin.Web.Templating" Version="1.0.0-T9LXGUJ" />
-    <PackageReference Include="Penguin.Cms.Abstractions" Version="1.0.0-T9LXGUJ" />
+    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="1.0.1-T9M1HHH" />
+    <PackageReference Include="Penguin.Web.Abstractions" Version="1.0.1-T9M1HHH" />
+    <PackageReference Include="Penguin.Web.Templating" Version="1.0.1-T9M1HHH" />
+    <PackageReference Include="Penguin.Cms.Abstractions" Version="1.0.1-T9M1HHH" />
   </ItemGroup>
 </Project>
