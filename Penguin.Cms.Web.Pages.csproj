@@ -9,9 +9,9 @@
     <RootNamespace>Penguin.Cms.Web.Pages</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="1.0.1-T9M3AAF" />
     <PackageReference Include="Penguin.Web.Abstractions" Version="1.0.1-T9M3AAF" />
     <PackageReference Include="Penguin.Web.Templating" Version="1.0.1-T9M3AAF" />
     <PackageReference Include="Penguin.Cms.Abstractions" Version="1.0.1-T9M3AAF" />
+    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="1.0.1-T9M4A3K" />
   </ItemGroup>
 </Project>
