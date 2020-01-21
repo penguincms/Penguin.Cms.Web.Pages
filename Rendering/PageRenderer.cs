@@ -63,6 +63,9 @@ namespace Penguin.Cms.Modules.Pages.Rendering
             if (!string.IsNullOrWhiteSpace(page.Layout))
             {
                 PageContent += "@{ Layout = \"" + page.Layout + "\"; }" + System.Environment.NewLine + System.Environment.NewLine;
+            } else
+            {
+                PageContent += "@{ Layout = null; }" + System.Environment.NewLine + System.Environment.NewLine;
             }
 
             PageContent += page.Content;
