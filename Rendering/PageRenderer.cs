@@ -15,13 +15,13 @@ namespace Penguin.Cms.Modules.Pages.Rendering
 {
     public class PageRenderer : ObjectRenderer, ISelfRegistering
     {
+        protected static object ViewInjectorLock = new object();
         protected static string ViewInjectors { get; set; }
         protected IServiceProvider ServiceProvider { get; set; }
-        protected static object ViewInjectorLock = new object();
 
         public PageRenderer(IHostingEnvironment hostingEnvironment, IServiceProvider serviceProvider = null) : base(hostingEnvironment)
         {
-            ServiceProvider = serviceProvider;
+            this.ServiceProvider = serviceProvider;
         }
 
         public (string RelativePath, object Model) GenerateRenderInformation(Page page, IEnumerable<TemplateParameter> parameters = null)
@@ -43,11 +43,11 @@ namespace Penguin.Cms.Modules.Pages.Rendering
 
                     viewInjectors.Append(string.Empty);
 
-                    if (ServiceProvider != null)
+                    if (this.ServiceProvider != null)
                     {
                         foreach (Type t in TypeFactory.GetAllImplementations(typeof(IMacroProvider)))
                         {
-                            if (ServiceProvider.GetService(t) != null)
+                            if (this.ServiceProvider.GetService(t) != null)
                             {
                                 viewInjectors.Append($"@inject {t.GetDeclaration()} {t.Name} {System.Environment.NewLine}");
                             }
@@ -63,7 +63,8 @@ namespace Penguin.Cms.Modules.Pages.Rendering
             if (!string.IsNullOrWhiteSpace(page.Layout))
             {
                 PageContent += "@{ Layout = \"" + page.Layout + "\"; }" + System.Environment.NewLine + System.Environment.NewLine;
-            } else
+            }
+            else
             {
                 PageContent += "@{ Layout = null; }" + System.Environment.NewLine + System.Environment.NewLine;
             }
