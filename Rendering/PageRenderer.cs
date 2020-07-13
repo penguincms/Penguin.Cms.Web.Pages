@@ -15,7 +15,7 @@ namespace Penguin.Cms.Modules.Pages.Rendering
 {
     public class PageRenderer : ObjectRenderer, ISelfRegistering
     {
-        private static object ViewInjectorLock = new object();
+        private static readonly object ViewInjectorLock = new object();
         protected static string ViewInjectors { get; set; }
         protected IServiceProvider ServiceProvider { get; set; }
 
