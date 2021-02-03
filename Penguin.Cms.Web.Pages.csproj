@@ -3,16 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageProjectUrl>https://github.com/penguincms/Penguin.Cms.Web.Pages</PackageProjectUrl>
-    <Version>5.0.0</Version>
+    <Version>5.0.1</Version>
     <Description>Not Available</Description>
     <AssemblyName>Penguin.Cms.Web.Pages</AssemblyName>
     <RootNamespace>Penguin.Cms.Web.Pages</RootNamespace>
     <DocumentationFile>Penguin.Cms.Web.Pages.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Web.Abstractions" Version="5.0.1-TA99DVY" />
-    <PackageReference Include="Penguin.Web.Templating" Version="5.0.1-TA99DVY" />
-    <PackageReference Include="Penguin.Cms.Abstractions" Version="5.0.1-TA99DVY" />
-    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="5.0.1-TA99DVY" />
+    <PackageReference Include="Penguin.Web.Abstractions" Version="5.0.2-TA9KKLU" />
+    <PackageReference Include="Penguin.Web.Templating" Version="5.0.2-TA9KKLU" />
+    <PackageReference Include="Penguin.Cms.Abstractions" Version="5.0.2-TA9KKLU" />
+    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="5.0.2-TA9KKLU" />
   </ItemGroup>
 </Project>
