@@ -11,8 +11,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Penguin.Web.Abstractions" Version="5.0.2-TA9KKLU" />
-    <PackageReference Include="Penguin.Web.Templating" Version="5.0.2-TAA4YFP" />
-    <PackageReference Include="Penguin.Cms.Abstractions" Version="5.0.2-TAA4YFP" />
-    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="5.0.2-TAA4YFP" />
+    <PackageReference Include="Penguin.Web.Templating" Version="5.0.2-TABDXT3" />
+    <PackageReference Include="Penguin.Cms.Abstractions" Version="5.0.2-TABDXT3" />
+    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="5.0.2-TABDXT3" />
   </ItemGroup>
 </Project>
