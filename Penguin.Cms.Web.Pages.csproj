@@ -13,6 +13,6 @@
     <PackageReference Include="Penguin.Web.Abstractions" Version="5.0.6-TAHULSY" />
     <PackageReference Include="Penguin.Web.Templating" Version="5.0.6-TAHULSY" />
     <PackageReference Include="Penguin.Cms.Abstractions" Version="5.0.6-TAHULSY" />
-    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="5.0.6-TAJHTXV" />
+    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="5.0.6-TAKDH3F" />
   </ItemGroup>
 </Project>
