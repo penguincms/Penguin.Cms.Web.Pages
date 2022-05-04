@@ -4,7 +4,7 @@ using Penguin.Cms.Pages.Repositories;
 using Penguin.Web.Abstractions.Interfaces;
 using System.Threading.Tasks;
 
-namespace Penguin.Cms.Modules.Pages.Middleware
+namespace Penguin.Cms.Web.Pages.Middleware
 {
     //http://azurecoder.net/2017/07/09/routing-middleware-custom-irouter/
     public class DatabasePage : IPenguinMiddleware

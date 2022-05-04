@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Text;
 using TemplateParameter = Penguin.Templating.Abstractions.TemplateParameter;
 
-namespace Penguin.Cms.Modules.Pages.Rendering
+namespace Penguin.Cms.Web.Pages.Rendering
 {
     public class PageRenderer : ObjectRenderer, ISelfRegistering
     {
@@ -28,7 +28,7 @@ namespace Penguin.Cms.Modules.Pages.Rendering
         {
             if (page is null)
             {
-                throw new System.ArgumentNullException(nameof(page));
+                throw new ArgumentNullException(nameof(page));
             }
 
             parameters = parameters ?? new List<TemplateParameter>();
@@ -41,7 +41,7 @@ namespace Penguin.Cms.Modules.Pages.Rendering
                 {
                     StringBuilder viewInjectors = new StringBuilder();
 
-                    viewInjectors.Append(string.Empty);
+                    _ = viewInjectors.Append(string.Empty);
 
                     if (this.ServiceProvider != null)
                     {
@@ -49,7 +49,7 @@ namespace Penguin.Cms.Modules.Pages.Rendering
                         {
                             if (this.ServiceProvider.GetService(t) != null)
                             {
-                                viewInjectors.Append($"@inject {t.GetDeclaration()} {t.Name} {System.Environment.NewLine}");
+                                _ = viewInjectors.Append($"@inject {t.GetDeclaration()} {t.Name} {Environment.NewLine}");
                             }
                         }
                     }
@@ -58,20 +58,20 @@ namespace Penguin.Cms.Modules.Pages.Rendering
                 }
             }
 
-            PageContent = ViewInjectors + System.Environment.NewLine;
+            PageContent = ViewInjectors + Environment.NewLine;
 
             if (!string.IsNullOrWhiteSpace(page.Layout))
             {
-                PageContent += "@{ Layout = \"" + page.Layout + "\"; }" + System.Environment.NewLine + System.Environment.NewLine;
+                PageContent += "@{ Layout = \"" + page.Layout + "\"; }" + Environment.NewLine + Environment.NewLine;
             }
             else
             {
-                PageContent += "@{ Layout = null; }" + System.Environment.NewLine + System.Environment.NewLine;
+                PageContent += "@{ Layout = null; }" + Environment.NewLine + Environment.NewLine;
             }
 
             PageContent += page.Content;
 
-            GeneratedTemplateInfo generatedTemplateInfo = base.GenerateTemplatePath(page, parameters, PageContent, "Content");
+            GeneratedTemplateInfo generatedTemplateInfo = GenerateTemplatePath(page, parameters, PageContent, "Content");
 
             return (generatedTemplateInfo.RelativePath, generatedTemplateInfo.Model);
         }
