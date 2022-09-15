@@ -10,9 +10,9 @@
     <DocumentationFile>Penguin.Cms.Web.Pages.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Web.Abstractions" Version="5.0.6-TB0E36F" />
-    <PackageReference Include="Penguin.Web.Templating" Version="5.0.6-TB0E36F" />
-    <PackageReference Include="Penguin.Cms.Abstractions" Version="5.0.6-TB0E36F" />
-    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="5.0.6-TB0E36F" />
+    <PackageReference Include="Penguin.Web.Abstractions" Version="5.0.6-TB1ZEZV" />
+    <PackageReference Include="Penguin.Web.Templating" Version="5.0.6-TB1ZEZV" />
+    <PackageReference Include="Penguin.Cms.Abstractions" Version="5.0.6-TB1ZEZV" />
+    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="5.0.6-TB3XO8Q" />
   </ItemGroup>
 </Project>
