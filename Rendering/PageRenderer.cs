@@ -16,7 +16,9 @@ namespace Penguin.Cms.Web.Pages.Rendering
     public class PageRenderer : ObjectRenderer, ISelfRegistering
     {
         private static readonly object ViewInjectorLock = new();
+
         protected static string ViewInjectors { get; set; }
+
         protected IServiceProvider ServiceProvider { get; set; }
 
         public PageRenderer(IHostingEnvironment hostingEnvironment, IServiceProvider serviceProvider = null) : base(hostingEnvironment)
