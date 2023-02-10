@@ -15,13 +15,13 @@ namespace Penguin.Cms.Web.Pages.Rendering
 {
     public class PageRenderer : ObjectRenderer, ISelfRegistering
     {
-        private static readonly object ViewInjectorLock = new object();
+        private static readonly object ViewInjectorLock = new();
         protected static string ViewInjectors { get; set; }
         protected IServiceProvider ServiceProvider { get; set; }
 
         public PageRenderer(IHostingEnvironment hostingEnvironment, IServiceProvider serviceProvider = null) : base(hostingEnvironment)
         {
-            this.ServiceProvider = serviceProvider;
+            ServiceProvider = serviceProvider;
         }
 
         public (string RelativePath, object Model) GenerateRenderInformation(Page page, IEnumerable<TemplateParameter> parameters = null)
@@ -31,7 +31,7 @@ namespace Penguin.Cms.Web.Pages.Rendering
                 throw new ArgumentNullException(nameof(page));
             }
 
-            parameters = parameters ?? new List<TemplateParameter>();
+            parameters ??= new List<TemplateParameter>();
 
             string PageContent;
 
@@ -39,15 +39,15 @@ namespace Penguin.Cms.Web.Pages.Rendering
             {
                 if (ViewInjectors is null)
                 {
-                    StringBuilder viewInjectors = new StringBuilder();
+                    StringBuilder viewInjectors = new();
 
                     _ = viewInjectors.Append(string.Empty);
 
-                    if (this.ServiceProvider != null)
+                    if (ServiceProvider != null)
                     {
                         foreach (Type t in TypeFactory.GetAllImplementations(typeof(IMacroProvider)))
                         {
-                            if (this.ServiceProvider.GetService(t) != null)
+                            if (ServiceProvider.GetService(t) != null)
                             {
                                 _ = viewInjectors.Append($"@inject {t.GetDeclaration()} {t.Name} {Environment.NewLine}");
                             }

@@ -14,7 +14,7 @@ namespace Penguin.Cms.Web.Pages.Middleware
         //TODO: Learn what this is
         public DatabasePage(RequestDelegate next)
         {
-            this._next = next;
+            _next = next;
         }
 
         public async Task Invoke(HttpContext context)
@@ -33,7 +33,7 @@ namespace Penguin.Cms.Web.Pages.Middleware
                 context.Request.QueryString = context.Request.QueryString.Add("Url", RequestUrl);
             }
 
-            await this._next(context).ConfigureAwait(true);
+            await _next(context).ConfigureAwait(true);
         }
     }
 }
