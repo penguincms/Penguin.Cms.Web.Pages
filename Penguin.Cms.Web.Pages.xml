@@ -4,5 +4,12 @@
         <name>Penguin.Cms.Web.Pages</name>
     </assembly>
     <members>
+        <member name="M:Penguin.Cms.Web.Pages.Extensions.TypeExtensions.GetDeclaration(System.Type)">
+            <summary>
+            Returns a string that can be used to declare a type in code (ex System.Collections.Generic.List&lt;System.String&gt;)
+            </summary>
+            <param name="type">The type to get the declaration for</param>
+            <returns>The type declaration</returns>
+        </member>
     </members>
 </doc>

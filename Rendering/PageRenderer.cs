@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Loxifi;
+using Microsoft.AspNetCore.Hosting;
 using Penguin.Cms.Abstractions.Interfaces;
 using Penguin.Cms.Pages;
+using Penguin.Cms.Web.Pages.Extensions;
 using Penguin.DependencyInjection.Abstractions.Interfaces;
 using Penguin.Reflection;
 using Penguin.Reflection.Extensions;
@@ -15,6 +17,8 @@ namespace Penguin.Cms.Web.Pages.Rendering
 {
     public class PageRenderer : ObjectRenderer, ISelfRegistering
     {
+        static TypeFactory TypeFactory { get; set; } = new TypeFactory(new TypeFactorySettings());
+
         private static readonly object ViewInjectorLock = new();
 
         protected static string ViewInjectors { get; set; }
