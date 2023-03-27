@@ -17,8 +17,6 @@ namespace Penguin.Cms.Web.Pages.Rendering
 {
     public class PageRenderer : ObjectRenderer, ISelfRegistering
     {
-        static TypeFactory TypeFactory { get; set; } = new TypeFactory(new TypeFactorySettings());
-
         private static readonly object ViewInjectorLock = new();
 
         protected static string ViewInjectors { get; set; }
@@ -51,7 +49,7 @@ namespace Penguin.Cms.Web.Pages.Rendering
 
                     if (ServiceProvider != null)
                     {
-                        foreach (Type t in TypeFactory.GetAllImplementations(typeof(IMacroProvider)))
+                        foreach (Type t in TypeFactory.Default.GetAllImplementations(typeof(IMacroProvider)))
                         {
                             if (ServiceProvider.GetService(t) != null)
                             {
