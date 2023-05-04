@@ -11,9 +11,9 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Penguin.Web.Abstractions" Version="5.7.0" />
-    <PackageReference Include="Penguin.Web.Templating" Version="5.7.0" />
-    <PackageReference Include="Penguin.Cms.Abstractions" Version="5.7.0" />
-    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="5.7.0" />
+    <PackageReference Include="Penguin.Web.Abstractions" Version="5.15.0" />
+    <PackageReference Include="Penguin.Web.Templating" Version="5.15.0" />
+    <PackageReference Include="Penguin.Cms.Abstractions" Version="5.15.0" />
+    <PackageReference Include="Penguin.Cms.Pages.Repositories" Version="5.15.0" />
   </ItemGroup>
 </Project>
